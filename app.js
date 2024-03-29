@@ -19,21 +19,21 @@ const port = 5000;
 app.use(express.json());
 dbConfig();
 app.use('/uploads', express.static('uploads'))
-app.use(
-  cors({
-    methods: "GET,POST,PUT,DELETE",
-    credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     methods: "GET,POST,PUT,DELETE",
+//     credentials: true,
+//   })
+// );
 
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", `${process.env.CLIENT_URL}`); // "http://64.225.103.36
-  res.header("Access-Control-Allow-Methods", "GET, POST ,PUT,DELETE,PATCH");
-  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization, x-access-token");
-  res.header("Access-Control-Allow-Credentials", "true");
+// app.use((req, res, next) => {
+//   res.header("Access-Control-Allow-Origin", `${process.env.CLIENT_URL}`); // "http://64.225.103.36
+//   res.header("Access-Control-Allow-Methods", "GET, POST ,PUT,DELETE,PATCH");
+//   res.header("Access-Control-Allow-Headers", "Content-Type, Authorization, x-access-token");
+//   res.header("Access-Control-Allow-Credentials", "true");
 
-  next();
-});
+//   next();
+// });
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
